@@ -1,0 +1,250 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block extrastyle %}
+{% endblock %}
+
+{% block body %}
+    <div class="pagina">
+        <header>
+            <nav class="header__nav">
+                <ul class="nav__ul list-none">
+                    <li class="ul-li"><i class="far fa-user-circle"></i></li>
+                    <li class="ul-li">
+                        <a href="#" id="username" class="nav__link">Goku
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 icon icon-mt-left icon-down" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav__ul list-none m-right">
+                    <li class="ul-li">
+                        <a href="#">
+                            <svg class="icon icon--margin" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                 viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter">
+                                <path d="M20 7h-4V4c0-1.103-.897-2-2-2h-4c-1.103 0-2 .897-2 2v5H4c-1.103 0-2 .897-2 2v9a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V9c0-1.103-.897-2-2-2zM4 11h4v8H4v-8zm6-1V4h4v15h-4v-9zm10 9h-4V9h4v10z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="ul-li">
+                        <a href="#">
+                            <img class="icon icon--margin" src="{% static 'img/Flowdoro/settings.svg' %}" alt="Configuraciones">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <div class="main-timer bd-radius">
+                <div id="container-1" class="timer-container border">
+                    <div class="timer__content">
+                        <svg id="btnPauseFirst" xmlns="http://www.w3.org/2000/svg"
+                             class="h-6 w-6 icon time-icon icon-animation" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <svg id="btnPlay1" xmlns="http://www.w3.org/2000/svg"
+                             class="h-6 w-6 icon time-icon  icon-animation" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span id="first-number" class="timer__number first-time">25:00</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 icon time-icon" fill="none"
+                             viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
+                        </svg>
+                    </div>
+                    <h2 class="first__h2">Enfoque</h2>
+                </div>
+                <div id="container-2" class="timer-container border timer-container--max-width disabled">
+                    <div class="timer__content">
+                        <svg id="btnPlay2" xmlns="http://www.w3.org/2000/svg"
+                             class="h-6 w-6 icon time-icon  icon-animation" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <svg id="btnPause2" xmlns="http://www.w3.org/2000/svg"
+                             class="h-6 w-6 icon time-icon icon-animation" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span id="last-number" class="timer__number last-time">
+                            5:00</span>
+                        <h2 class="timer__h2 timer--modifier">Descanso</h2>
+                    </div>
+                </div>
+            </div>
+            <aside class="aside">
+                <div class="administration-container b-white bd-radius">
+                    <div class="data-container">
+                        <ul class="data-ul list-none padding-none">
+                            <li class="data-ul__li">
+                                <div class="info-li">
+                                    <h4 class="info-h4">4.3h</h4>
+                                    <p class="info-p">Horas cumplidas</p>
+                                </div>
+                            </li>
+                            <li class="data-ul__li">
+                                <div class="info-li">
+                                    <h4 class="info-h4">4.3h</h4>
+                                    <p class="info-p">Actividades</p>
+                                </div>
+                            </li>
+                            <li class="data-ul__li">
+                                <div class="info-li">
+                                    <h4 class="info-h4">4.3h</h4>
+                                    <p class="info-p">Actividades</p>
+                                </div>
+                            </li>
+                            <li class="data-ul__li ">
+                                <div class="info-li  no-border">
+                                    <h4 class="info-h4">30m</h4>
+                                    <p class="info-p">Actividades</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="taskgenerator-container">
+                        <form class="taskgenerator-form" action="{% url 'createTask' %}" method="POST" onsubmit='redirect();return false;'>
+                            {% csrf_token %}
+                            <input type="text" placeholder="Añadir actividad a Bandeja de entrada"
+                            class="taskgenerator-input" value='task' name ="name">
+                            <ul class="tarea-li__ul list-none padding-none">
+                                <li class="tarea-ul__li--container">
+                                    <ul class="tomatos-li list-none padding-none">
+                                        <li class="tarea-ul__li" >
+                                            <input type="image"  value="1" name ="num_pomodoro" src="{% static 'img/Flowdoro/tomato.svg' %}" alt="tomato" class="pomodoro-icon--task" ></li>
+                                        <li class="tarea-ul__li "><img src="{% static 'img/Flowdoro/tomato.svg' %}" alt="tomato" class="pomodoro-icon--task"></li>
+                                        <li class="tarea-ul__li"><img src="{% static 'img/Flowdoro/tomato.svg' %}" alt="tomato" class="pomodoro-icon--task"></li>
+                                        <li class="tarea-ul__li"><img src="{% static 'img/Flowdoro/tomato.svg' %}" alt="tomato" class="pomodoro-icon--task"></li>
+                                        <li class="tarea-ul__li"><img src="{% static 'img/Flowdoro/tomato.svg' %}" alt="tomato" class="pomodoro-icon--task"></li>
+                                        <li class="tarea-ul__li"><img src="{% static 'img/Flowdoro/tomato.svg' %}" alt="tomato" class="pomodoro-icon--task"></li>
+                                    </ul>
+                                </li>
+                                <li class="tarea-ul__li"><a href="#"><i class="fas fa-chevron-right"></i></a></li>
+                                <li id="icon-yellow" class="tarea-ul__li">
+                                    <a href="#"><i class="fas fa-circle circle-icon"></i></a>
+                                </li>
+                            </ul>
+                        </form>
+                        <form id="formulario" action="" class="form">
+                            <ul class="select padding-none list-none">
+                                <li class="select__option"><i class="fas fa-circle circle-icon circle-icon--blue"></i>Option
+                                </li>
+                                <li class="select__option"><i class="fas fa-circle circle-icon circle-icon--red"></i>Option
+                                </li>
+                                <li class="select__option"><i class="fas fa-circle circle-icon circle-icon--cyan"></i>Option
+                                </li>
+                                <li class="select__option"><i class="fas fa-circle circle-icon circle-icon--gray"></i>Option
+                                </li>
+                                <li class="select__option"><i class="fas fa-circle circle-icon circle-icon--green"></i>Option
+                                </li>
+                                <li class="select__option"><i class="fas fa-circle circle-icon circle-icon--orange"></i>Option
+                                </li>
+                            </ul>
+                            <input type="hidden">
+                        </form>
+                    </div>
+                </div>
+                <section>
+                    <h4>Trabajo</h4>
+                    <div class="tareas-container b-white bd-radius">
+                        <ul class="tareas__ul list-none">
+                            {% for item in task %}
+                                <li class="tarea-li">
+                                <div class="tarea-container">
+                                    <div class="tarea">
+                                        <div class="tarea__descripcion">
+                                            <i class="fas fa-ellipsis-v icon--green"></i>
+                                            <i class="far fa-play-circle icon--green"></i>
+                                            <!--TAREAS-->
+                                            <div class="tarea__contenido">
+                                                <p class="tarea-descripcion">{{ item.name }}</p>
+                                                <ul class="tarea-li__ul list-none padding-none">
+                                                    <li class="tarea-ul__li"><img src="{% static 'img/Flowdoro/tomato.svg' %}" alt="tomato"
+                                                                                  class="pomodoro-icon"></li>
+                                                    <li class="tarea-ul__li"><img src="{% static 'img/Flowdoro/tomato.svg' %}" alt="tomato"
+                                                                                  class="pomodoro-icon"></li>
+                                                    <li class="tarea-ul__li"><img src="{% static 'img/Flowdoro/tomato.svg' %}" alt="tomato"
+                                                                                  class="pomodoro-icon"></li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tarea__datetime">Hoy</div>
+                            </li>
+                            {% endfor %}
+                            <li class="tarea-li">
+                                <div class="tarea-container">
+                                    <div class="tarea">
+                                        <div class="tarea__descripcion">
+                                            <i class="fas fa-ellipsis-v icon--green"></i>
+                                            <i class="far fa-play-circle icon--green"></i>
+                                            <!--TAREAS-->
+                                            <div class="tarea__contenido">
+                                                <p class="tarea-descripcion">Sacar Roland Interpol</p>
+                                                <ul class="tarea-li__ul list-none padding-none">
+                                                    <li class="tarea-ul__li"><img src="{% static 'img/Flowdoro/tomato.svg' %}" alt="tomato"
+                                                                                  class="pomodoro-icon"></li>
+                                                    <li class="tarea-ul__li"><img src="{% static 'img/Flowdoro/tomato.svg' %}" alt="tomato"
+                                                                                  class="pomodoro-icon"></li>
+                                                    <li class="tarea-ul__li"><img src="{% static 'img/Flowdoro/tomato.svg' %}" alt="tomato"
+                                                                                  class="pomodoro-icon"></li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tarea__datetime">Hoy</div>
+                            </li>
+                            <li class="tarea-li">
+                                <div class="tarea-container">
+                                    <div class="tarea">
+                                        <div class="tarea__descripcion">
+                                            <i class="fas fa-ellipsis-v icon--green"></i>
+                                            <i class="far fa-play-circle icon--green"></i>
+                                            <!--TAREAS-->
+                                            <div class="tarea__contenido">
+                                                <p class="tarea-descripcion">Aplicar JS en este proyecto</p>
+                                                <ul class="tarea-li__ul list-none padding-none">
+                                                    <li class="tarea-ul__li"><img src="{% static 'img/Flowdoro/tomato.svg' %}" alt="tomato"
+                                                                                  class="pomodoro-icon"></li>
+                                                    <li class="tarea-ul__li"><img src="{% static 'img/Flowdoro/tomato.svg' %}" alt="tomato"
+                                                                                  class="pomodoro-icon"></li>
+                                                    <li class="tarea-ul__li"><img src="{% static 'img/Flowdoro/tomato.svg' %}" alt="tomato"
+                                                                                  class="pomodoro-icon"></li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tarea__datetime">Hoy</div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </aside>
+        </main>
+    </div>
+{% endblock %}
+
+{% block extrajs %}
+    <script src="{% static 'js/flow/animations_timer.js' %}"></script>
+    <script src="{% static 'js/flow/logic_taskList.js' %}"></script>
+    <script src="{% static 'js/flow/logic_timer.js' %}"></script>
+{% endblock %}
